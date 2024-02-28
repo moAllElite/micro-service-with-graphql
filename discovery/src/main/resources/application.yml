@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      default:  http://${eureka.instance.hostname}:${java.rmi.server.port}/eureka/
+server:
+  port: 8070
+
+#that we'll read config from eureka
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: discovery
