@@ -1,0 +1,23 @@
+
+
+spring:
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    url: jdbc:mysql://localhost:3306/ms1_db?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: user
+    password: user
+  graphql:
+    graphiql:
+      enabled: true
+  config:
+    import: optional:configserver:http://localhost:8888
+server:
+    port: 9090
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8070/eureka
+  instance:
+    hostname: localhost
+
+

@@ -9,5 +9,5 @@ public interface ISchoolService {
     Long save (SchoolDto schoolDto);
     List<SchoolDto> findAll();
 
-    FullResponseSchool  getSchoolsWithStudent(Long schoolId);
+    FullResponseSchool  getSchoolsWithTeacher(Long schoolId);
 }

@@ -1,6 +1,6 @@
 package com.groupeisi.ms2.service;
 
-import com.groupeisi.ms2.clients.StudentClient;
+import com.groupeisi.ms2.clients.TeacherClient;
 import com.groupeisi.ms2.domain.FullResponseSchool;
 import com.groupeisi.ms2.dto.SchoolDto;
 import com.groupeisi.ms2.mapping.SchoolMapping;
@@ -14,7 +14,7 @@ import java.util.List;
 public class SchoolServiceImpl implements ISchoolService{
     private final ISchoolRepository repository;
     private final   SchoolMapping mapper;
-    private  StudentClient studentClient;
+    private final TeacherClient studentClient;
 
 
     @Override
@@ -33,17 +33,17 @@ public class SchoolServiceImpl implements ISchoolService{
     }
 
     @Override
-    public FullResponseSchool getSchoolsWithStudent(Long schoolId) {
+    public FullResponseSchool getSchoolsWithTeacher(Long schoolId) {
         var school = repository.findById(schoolId)
                 .orElseThrow(
                         ()->new EntityNotFoundException("No school was found")
                 );
-        var students = studentClient.findAllStudentBySchoolId(schoolId);
+        var students = studentClient.findAllTeacherBySchoolId(schoolId);
         return FullResponseSchool
                 .builder()
-                .name(school.getName())
+                .fullName(school.getName())
                 .adress(school.getAddress())
-                .students(students)
+                .teachers(students)
                 .build();
     }
 }

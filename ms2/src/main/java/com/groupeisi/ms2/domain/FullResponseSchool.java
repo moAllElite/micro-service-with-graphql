@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 public class FullResponseSchool {
 
-    private String name;
+    private String fullName;
     private String adress;
-    List<Student> students;
+    List<Teacher> teachers;
 }

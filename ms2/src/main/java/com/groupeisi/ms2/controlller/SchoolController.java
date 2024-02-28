@@ -30,8 +30,8 @@ public class SchoolController {
     public ResponseEntity<String> getMs2(){
         return ResponseEntity.ok("je suis ms2");
     }
-    @GetMapping("/with-student-id/{school-id}")
-    public ResponseEntity<FullResponseSchool> getSchoolsWithStudent(@PathVariable(name="school-id")  Long schoolId){
-        return ResponseEntity.ok(schoolService.getSchoolsWithStudent(schoolId));
+    @GetMapping("/with-teachers/{school-id}")
+    public ResponseEntity<FullResponseSchool> getSchoolsWithTeacher(@PathVariable(name="school-id")  Long schoolId){
+        return ResponseEntity.ok(schoolService.getSchoolsWithTeacher(schoolId));
     }
 }
