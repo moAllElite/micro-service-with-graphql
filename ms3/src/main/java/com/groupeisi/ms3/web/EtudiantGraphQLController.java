@@ -1,12 +1,11 @@
 package com.groupeisi.ms3.web;
 
 import com.groupeisi.ms3.domain.Student;
-import com.groupeisi.ms3.service.impl.StudentServiceImpl;
+import com.groupeisi.ms3.service.impl.EtudiantServiceImpl;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -17,11 +16,11 @@ import java.util.List;
 
 @Controller
 public class EtudiantGraphQLController {
-    public EtudiantGraphQLController(StudentServiceImpl etudiantService) {
+    public EtudiantGraphQLController(EtudiantServiceImpl etudiantService) {
         this.etudiantService = etudiantService;
     }
 
-    private  final StudentServiceImpl etudiantService;
+    private  final   EtudiantServiceImpl etudiantService;
 
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -40,8 +39,8 @@ public class EtudiantGraphQLController {
         return etudiantService.findAll();
     }
     @QueryMapping
-    public ResponseEntity<Integer> countEtudiants (
+    public Integer countEtudiants (
     ) {
-        return ResponseEntity.ok(etudiantService.countEtudiants());
+        return etudiantService.countEtudiants();
     }
 }

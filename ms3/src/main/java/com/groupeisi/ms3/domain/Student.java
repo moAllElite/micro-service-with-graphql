@@ -3,8 +3,7 @@ package com.groupeisi.ms3.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity(name = "student")
-@Table
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor

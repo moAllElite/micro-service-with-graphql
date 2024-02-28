@@ -4,7 +4,7 @@ import com.groupeisi.ms3.domain.Student;
 
 import java.util.List;
 
-public interface IStudentService {
+public interface IEtudiantService {
     List<Student> findAll();
     void save(Student etudiant);
     Integer countEtudiants();

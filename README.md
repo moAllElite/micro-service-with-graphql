@@ -14,3 +14,19 @@ Assurez d'avoir ces outils installés avant l'exécution du projet:
 
 Naviger dans les dossiers  du projet 
 Faite un mvn clean install pour builder les dépendances du projet 
+
+
+# Usage
+Tester vos endpoints via GraphiQL
+  ````
+   http://localhost:9090/graphiql?path=/graphql
+  ````
+## GraphiQL
+
+ - get all students 
+
+![img.png](img.png)
+
+- count students
+
+![img_1.png](img_1.png)
