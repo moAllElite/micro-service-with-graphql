@@ -36,3 +36,7 @@ Tester vos endpoints via GraphiQL
 - gateway on create new school on port `8222`
 
 ![img_3.png](img_3.png)
+
+- gateway redirect on find by teacher with school id
+
+![img_4.png](img_4.png)
