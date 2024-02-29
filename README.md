@@ -32,3 +32,7 @@ Tester vos endpoints via GraphiQL
 - count students
 
 ![img_1.png](img_1.png)
+
+- gateway on create new school on port `8222`
+
+![img_3.png](img_3.png)
