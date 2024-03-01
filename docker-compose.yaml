@@ -28,6 +28,21 @@ services:
     depends_on:
       - mysql-ms1
     restart: unless-stopped
+
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - zipkin
+networks:
+  zipkin:
+    driver: bridge
+  mysql:
+    driver: bridge
+
+
 volumes:
   mysql_data:
     driver: local
