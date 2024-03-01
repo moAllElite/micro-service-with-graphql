@@ -20,7 +20,10 @@ spring:
           uri: http://localhost:9999
           predicates:
             - Path= /api/v1/schools/**
-
+        - id: students
+          uri: http://localhost:9090
+          predicates:
+            - Path = /graphiql
 
 
 
