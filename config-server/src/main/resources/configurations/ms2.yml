@@ -1,0 +1,26 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 9999
+spring:
+  application:
+    name: ms2
+  datasource:
+    username: user
+    password: user
+    url: jdbc:mysql://localhost:3306/ms1_db
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+
+application:
+  config:
+    students-url: http://localhost:8222/api/v1/teachers

@@ -1,0 +1,26 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8070/eureka
+
+spring:
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    url: jdbc:mysql://localhost:3306/ms1_db?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: user
+    password: user
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  graphql:
+    graphiql:
+      enabled: true
+  application:
+    name: ms3
+server:
+  port: 9090
+
+
+
