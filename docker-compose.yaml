@@ -1,11 +1,11 @@
 version: '3.1'
 services:
-  mysql-ms1:
+  mysql-microservice:
     image: mysql:8.0
-    container_name: container_mysql-ms1
+    container_name: container_mysql-microservice
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ms1_db
+      MYSQL_DATABASE: microservice_db
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     ports:
@@ -15,18 +15,18 @@ services:
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
 
-  phpmyadmin-ms1:
-    container_name: container_phpmyadmin-ms1
+  phpmyadmin-microservice:
+    container_name: container_phpmyadmin-microservice
     image: phpmyadmin/phpmyadmin
     ports:
       - '8085:80'
     environment:
       MYSQL_ROOT_PASSWORD: root
-      PMA_HOST: mysql-ms1
+      PMA_HOST: mysql-microservice
       PMA_USER: user
       PMA_PASSWORD: user
     depends_on:
-      - mysql-ms1
+      - mysql-microservice
     restart: unless-stopped
 
   zipkin:
@@ -38,8 +38,6 @@ services:
       - zipkin
 networks:
   zipkin:
-    driver: bridge
-  mysql:
     driver: bridge
 
 

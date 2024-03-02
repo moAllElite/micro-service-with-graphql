@@ -13,7 +13,7 @@ spring:
   datasource:
     username: user
     password: user
-    url: jdbc:mysql://localhost:3306/ms1_db
+    url: jdbc:mysql://localhost:3306/microservice_db
   jpa:
     database: mysql
     hibernate:
@@ -21,6 +21,7 @@ spring:
     show-sql: true
     generate-ddl: true
 
-application:
-  config:
-    students-url: http://localhost:8222/api/v1/teachers
+management:
+  tracing:
+    sampling:
+      probability: 1.0

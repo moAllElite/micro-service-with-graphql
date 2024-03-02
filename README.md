@@ -14,6 +14,7 @@ Assurez d'avoir ces outils installés avant l'exécution du projet:
   Cloner le répositoire:
  ` git clone git remote add origin https://github.com/moAllElite/micro-service-with-graphql.git
 `
+
 Naviger dans les dossiers  du projet 
 Faite un mvn clean install pour builder les dépendances du projet 
 
@@ -42,3 +43,13 @@ Tester vos endpoints via GraphiQL
 - gateway redirect on find all teachers
 
 ![img_5.png](img_5.png)
+
+## Observanilité avec Zipkin
+lancez zipkin via 
+````
+http://127.0.0.1:9411/zipkin/?lookback=15m&endTs=1709338244420&limit=10
+````
+
+![img_6.png](img_6.png)
+
+![img_7.png](img_7.png)

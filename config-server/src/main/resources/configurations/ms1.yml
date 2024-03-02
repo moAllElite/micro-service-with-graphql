@@ -11,7 +11,7 @@ spring:
     name: ms1
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ms1_db
+    url: jdbc:mysql://localhost:3306/microservice_db
     username: user
     password: user
   jpa:
@@ -19,3 +19,8 @@ spring:
       ddl-auto: update
     database: mysql
     show-sql: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
