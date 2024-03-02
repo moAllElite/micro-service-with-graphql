@@ -44,7 +44,7 @@ Tester vos endpoints via GraphiQL
 
 ![img_5.png](img_5.png)
 
-## Observanilité avec Zipkin
+## Observabilité avec Zipkin
 lancez zipkin via 
 ````
 http://127.0.0.1:9411/zipkin/?lookback=15m&endTs=1709338244420&limit=10
